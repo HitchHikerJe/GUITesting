@@ -9,7 +9,7 @@ import java.awt.event.*;
 public class Game extends JPanel{
 	
 	private Ball ball = new Ball(this);
-	private Paddle paddle = new Paddle(this);
+//	private Paddle paddle = new Paddle(this);
 	
 	public Game() {
 		addKeyListener(new KeyListener() {
@@ -19,12 +19,12 @@ public class Game extends JPanel{
 
 			@Override
 			public void keyPressed(KeyEvent e) {
-				paddle.keyPressed(e);
+//				paddle.keyPressed(e);
 			}
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				paddle.keyReleased(e);
+//				paddle.keyReleased(e);
 			}
 		});
 		setFocusable(true);
@@ -35,16 +35,16 @@ public class Game extends JPanel{
 		Graphics2D g2 = (Graphics2D) g;
 		
 		ball.paint(g2);
-		paddle.paint(g2);
+//		paddle.paint(g2);
 	}
 	
 	public void move() {
 		ball.move();
-		paddle.move();
+//		paddle.move();
 	}
 	
 	public static void main(String[] args) throws InterruptedException{
-		JFrame frame = new JFrame("Testing");
+		JFrame frame = new JFrame("Many Sp");
 		frame.setSize(300,200);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
