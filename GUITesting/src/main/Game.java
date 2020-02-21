@@ -1,23 +1,45 @@
 package main;
 import javax.swing.*;
 
-import sprites.Ball;
+import sprites.*;
 
 import java.awt.*;
+import java.awt.event.*;
 
 public class Game extends JPanel{
 	
 	private Ball ball = new Ball(this);
+	private Paddle paddle = new Paddle(this);
+	
+	public Game() {
+		addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				paddle.press(e);
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				paddle.release();
+			}
+		});
+	}
 	
 	public void paint(Graphics g) {
 		super.paint(g);
 		Graphics2D g2 = (Graphics2D) g;
 		
 		ball.paint(g2);
+		paddle.paint(g2);
 	}
 	
 	public void move() {
 		ball.move();
+		paddle.move();
 	}
 	
 	public static void main(String[] args) throws InterruptedException{
