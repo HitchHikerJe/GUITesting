@@ -19,14 +19,15 @@ public class Game extends JPanel{
 
 			@Override
 			public void keyPressed(KeyEvent e) {
-				paddle.press(e);
+				paddle.keyPressed(e);
 			}
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				paddle.release();
+				paddle.keyReleased(e);
 			}
 		});
+		setFocusable(true);
 	}
 	
 	public void paint(Graphics g) {

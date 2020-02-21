@@ -27,10 +27,10 @@ public class Paddle extends JPanel{
 	}
 	
 	
-	public void press(KeyEvent e) {
+	public void keyPressed(KeyEvent e) {
 		dx = e.getKeyCode() == KeyEvent.VK_A ? -1 : (e.getKeyCode() == KeyEvent.VK_D ? 1 : 0);
 	}
-	public void release() {
+	public void keyReleased(KeyEvent e) {
 		dx = 0;
 	}
 }
