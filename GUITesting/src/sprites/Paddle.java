@@ -9,14 +9,14 @@ import main.Game;
 public class Paddle extends JPanel{
 	private Game game;
 	
-	private int x, y, dx = 0, length = 50, height = 20;
+	private int x, y, dx = 0, length = 100, height = 10;
 	
 	public Paddle(Game g) {
 		game = g;
 //		x = (game.getWidth() - length)/2;
 //		y = (game.getHeight() - (height + 10));
 		x = 0;
-		y = 0;
+		y = 130;
 	}
 	
 	public void paint(Graphics2D g) {
@@ -31,10 +31,8 @@ public class Paddle extends JPanel{
 	
 	public void keyPressed(KeyEvent e) {
 		dx = e.getKeyCode() == KeyEvent.VK_A ? -2 : (e.getKeyCode() == KeyEvent.VK_D ? 2 : 0);
-		System.out.println("OWO");
 	}
 	public void keyReleased(KeyEvent e) {
 		dx = 0;
-		System.out.println("UWU");
 	}
 }
