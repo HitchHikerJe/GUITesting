@@ -16,7 +16,6 @@ public class Paddle extends JPanel{
 //		x = (game.getWidth() - length)/2;
 //		y = (game.getHeight() - (height + 10));
 		x = 0;
-		y = 130;
 	}
 	
 	public void paint(Graphics2D g) {
@@ -25,7 +24,11 @@ public class Paddle extends JPanel{
 	}
 	
 	public void move() {
+		if(x + length + dx > game.getWidth() || x + dx < 0) {
+			dx = 0;
+		}
 		x += dx;
+		y = game.getHeight() - height;
 	}
 	
 	
