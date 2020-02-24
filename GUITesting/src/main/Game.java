@@ -12,8 +12,9 @@ public class Game extends JPanel{
 	private static Paddle paddle;
 	
 	public Game() {
+		setBackground(Color.DARK_GRAY);
 		ball = new Ball(this);
-		paddle = new Paddle(this);
+//		paddle = new Paddle(this);
 //		addKeyListener(new KeyListener() {
 //
 //			@Override
@@ -36,12 +37,12 @@ public class Game extends JPanel{
 		super.paint(g);
 		Graphics2D g2 = (Graphics2D) g;
 		ball.paint(g2);
-		paddle.paint(g2);
+//		paddle.paint(g2);
 	}
 	
 	public void move() {
 		ball.move();
-		paddle.move();
+//		paddle.move();
 	}
 	
 	public static void main(String[] args) throws InterruptedException{
@@ -52,13 +53,12 @@ public class Game extends JPanel{
 		frame.setVisible(true);
 		
 		Game game = new Game();
-		game.setBackground(Color.DARK_GRAY);
 		frame.add(game);
 		
-		while(true) {
-			game.move();
-			game.repaint();
-			Thread.sleep(10);
-		}
+//		while(true) {
+//			game.move();
+//			game.repaint();
+//			Thread.sleep(10);
+//		}
 	}
 }
