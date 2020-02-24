@@ -12,22 +12,24 @@ public class Game extends JPanel{
 	private static Paddle paddle;
 	
 	public Game() {
-		addKeyListener(new KeyListener() {
-
-			@Override
-			public void keyTyped(KeyEvent e) {}
-
-			@Override
-			public void keyPressed(KeyEvent e) {
-				paddle.keyPressed(e);
-			}
-
-			@Override
-			public void keyReleased(KeyEvent e) {
-				paddle.keyReleased(e);
-			}
-		});
-		setFocusable(true);
+		ball = new Ball(this);
+		paddle = new Paddle(this);
+//		addKeyListener(new KeyListener() {
+//
+//			@Override
+//			public void keyTyped(KeyEvent e) {}
+//
+//			@Override
+//			public void keyPressed(KeyEvent e) {
+//				paddle.keyPressed(e);
+//			}
+//
+//			@Override
+//			public void keyReleased(KeyEvent e) {
+//				paddle.keyReleased(e);
+//			}
+//		});
+//		setFocusable(true);
 	}
 	
 	public void paint(Graphics g) {
@@ -52,8 +54,6 @@ public class Game extends JPanel{
 		Game game = new Game();
 		game.setBackground(Color.DARK_GRAY);
 		frame.add(game);
-		ball = new Ball(game);
-		paddle = new Paddle(game);
 		
 		while(true) {
 			game.move();
