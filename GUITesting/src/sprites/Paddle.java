@@ -16,7 +16,7 @@ public class Paddle extends JPanel{
 //		x = (game.getWidth() - length)/2;
 //		y = (game.getHeight() - (height + 10));
 		x = 0;
-		y = 190;
+		y = 0;
 	}
 	
 	public void paint(Graphics2D g) {
@@ -30,9 +30,11 @@ public class Paddle extends JPanel{
 	
 	
 	public void keyPressed(KeyEvent e) {
-		dx = e.getKeyCode() == KeyEvent.VK_A ? -1 : (e.getKeyCode() == KeyEvent.VK_D ? 1 : 0);
+		dx = e.getKeyCode() == KeyEvent.VK_A ? -2 : (e.getKeyCode() == KeyEvent.VK_D ? 2 : 0);
+		System.out.println("OWO");
 	}
 	public void keyReleased(KeyEvent e) {
 		dx = 0;
+		System.out.println("UWU");
 	}
 }

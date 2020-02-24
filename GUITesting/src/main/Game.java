@@ -12,22 +12,22 @@ public class Game extends JPanel{
 	private static Paddle paddle;
 	
 	public Game() {
-//		addKeyListener(new KeyListener() {
-//
-//			@Override
-//			public void keyTyped(KeyEvent e) {}
-//
-//			@Override
-//			public void keyPressed(KeyEvent e) {
-//				paddle.keyPressed(e);
-//			}
-//
-//			@Override
-//			public void keyReleased(KeyEvent e) {
-//				paddle.keyReleased(e);
-//			}
-//		});
-//		setFocusable(true);
+		addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				paddle.keyPressed(e);
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				paddle.keyReleased(e);
+			}
+		});
+		setFocusable(true);
 	}
 	
 	public void paint(Graphics g) {
