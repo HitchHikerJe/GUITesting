@@ -8,8 +8,8 @@ import java.awt.event.*;
 
 public class Game extends JPanel{
 	
-	private Ball ball = new Ball(this);
-//	private Paddle paddle = new Paddle(this);
+	private static Ball ball;
+	private static Paddle paddle;
 	
 	public Game() {
 //		addKeyListener(new KeyListener() {
@@ -33,18 +33,17 @@ public class Game extends JPanel{
 	public void paint(Graphics g) {
 		super.paint(g);
 		Graphics2D g2 = (Graphics2D) g;
-		
 		ball.paint(g2);
-//		paddle.paint(g2);
+		paddle.paint(g2);
 	}
 	
 	public void move() {
 		ball.move();
-//		paddle.move();
+		paddle.move();
 	}
 	
 	public static void main(String[] args) throws InterruptedException{
-		JFrame frame = new JFrame("Many Sp");
+		JFrame frame = new JFrame("Many Sprites");
 		frame.setSize(300,200);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,6 +52,8 @@ public class Game extends JPanel{
 		Game game = new Game();
 		game.setBackground(Color.DARK_GRAY);
 		frame.add(game);
+		ball = new Ball(game);
+		paddle = new Paddle(game);
 		
 		while(true) {
 			game.move();

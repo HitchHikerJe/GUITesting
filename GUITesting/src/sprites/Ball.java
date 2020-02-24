@@ -6,7 +6,8 @@ import java.awt.*;
 import main.Game;
 
 public class Ball extends JPanel{
-	private Game game;
+	
+	public Game game;
 	
 	private int x = 0, y = 0, dx = 1, dy = 1, size = 20;
 	
