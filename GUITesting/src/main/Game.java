@@ -45,6 +45,11 @@ public class Game extends JPanel{
 		paddle.move();
 	}
 	
+	public void gameOver() {
+		JOptionPane.showMessageDialog(this, "Game Over", "Game Over", JOptionPane.YES_NO_OPTION);
+		System.exit(ABORT);
+	}
+	
 	public static void main(String[] args) throws InterruptedException{
 		JFrame frame = new JFrame("Many Sprites");
 		Game game = new Game();
