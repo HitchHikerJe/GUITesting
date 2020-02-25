@@ -13,8 +13,6 @@ public class Paddle extends JPanel{
 	
 	public Paddle(Game g) {
 		game = g;
-//		x = (game.getWidth() - length)/2;
-//		y = (game.getHeight() - (height + 10));
 		x = 0;
 	}
 	
