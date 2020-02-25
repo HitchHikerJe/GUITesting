@@ -8,8 +8,8 @@ import java.awt.event.*;
 
 public class Game extends JPanel{
 	
-	private static Ball ball;
-	private static Paddle paddle;
+	public Ball ball;
+	public Paddle paddle;
 	
 	public Game() {
 		setBackground(Color.DARK_GRAY);

@@ -31,6 +31,10 @@ public class Paddle extends JPanel{
 		y = game.getHeight() - height;
 	}
 	
+	public int[] getRect() {
+		int[] temp = {x, x + length, y, y+height};
+		return temp;
+	}	
 	
 	public void keyPressed(KeyEvent e) {
 		dx = e.getKeyCode() == KeyEvent.VK_A ? -2 : (e.getKeyCode() == KeyEvent.VK_D ? 2 : 0);
