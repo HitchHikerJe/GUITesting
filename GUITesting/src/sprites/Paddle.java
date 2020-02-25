@@ -34,7 +34,13 @@ public class Paddle extends JPanel{
 	public int[] getRect() {
 		int[] temp = {x, x + length, y, y+height};
 		return temp;
-	}	
+	}
+	
+	public void shrink() {
+		if(length >=15) {
+			length -= 10;
+		}
+	}
 	
 	public void keyPressed(KeyEvent e) {
 		dx = e.getKeyCode() == KeyEvent.VK_A ? -2 : (e.getKeyCode() == KeyEvent.VK_D ? 2 : 0);

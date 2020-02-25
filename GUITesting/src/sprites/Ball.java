@@ -27,6 +27,7 @@ public class Ball extends JPanel{
 		}
 		else if(y + dy + size > game.paddle.getRect()[2] && ((x < game.paddle.getRect()[1] && x > game.paddle.getRect()[0]) || (x + size > game.paddle.getRect()[0] && x + size < game.paddle.getRect()[1]))) {
 			dy = -1;
+			game.paddle.shrink();
 		}
 		else if(y + dy + size > game.getHeight()) {
 			game.gameOver();
