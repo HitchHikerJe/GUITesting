@@ -16,20 +16,26 @@ public class Ball extends JPanel{
 	}
 	
 	public void move() {
+		
 		if(x + dx < 0) {
 			dx = 1;
 		}
+		
 		else if(x + dx + size > game.getWidth()) {
 			dx = -1;
 		}
+		
 		if(y + dy < 0) {
 			dy = 1;
 		}
+		
 		else if(y + dy + size > game.paddle.getRect()[2] && ((x < game.paddle.getRect()[1] && x > game.paddle.getRect()[0]) || (x + size > game.paddle.getRect()[0] && x + size < game.paddle.getRect()[1]))) {
 			dy = -1;
 			speed++;
+			game.score.scoreUp();
 //			game.paddle.shrink();
 		}
+		
 		else if(y + dy + size > game.getHeight()) {
 			game.gameOver();
 		}

@@ -10,11 +10,16 @@ public class Game extends JPanel{
 	
 	public Ball ball;
 	public Paddle paddle;
+	public ScoreDisplay score;
 	
 	public Game() {
+		
 		setBackground(Color.DARK_GRAY);
+		
 		ball = new Ball(this);
 		paddle = new Paddle(this);
+		score = new ScoreDisplay(this);
+		
 		addKeyListener(new KeyListener() {
 
 			@Override
@@ -36,8 +41,10 @@ public class Game extends JPanel{
 	public void paint(Graphics g) {
 		super.paint(g);
 		Graphics2D g2 = (Graphics2D) g;
+		
 		ball.paint(g2);
 		paddle.paint(g2);
+		score.paint(g2);
 	}
 	
 	public void move() {
@@ -51,6 +58,7 @@ public class Game extends JPanel{
 	}
 	
 	public static void main(String[] args) throws InterruptedException{
+		
 		JFrame frame = new JFrame("Many Sprites");
 		Game game = new Game();
 		frame.add(game);
