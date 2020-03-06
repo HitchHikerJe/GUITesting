@@ -9,7 +9,7 @@ public class Ball extends JPanel{
 	
 	public Game game;
 	
-	private int x = 0, y = 0, dx = 1, dy = 1, size = 20;
+	private int x = 0, y = 0, dy = 1, dx = 1, speed = 0, size = 20;
 	
 	public Ball(Game g) {
 		game = g;
@@ -27,14 +27,17 @@ public class Ball extends JPanel{
 		}
 		else if(y + dy + size > game.paddle.getRect()[2] && ((x < game.paddle.getRect()[1] && x > game.paddle.getRect()[0]) || (x + size > game.paddle.getRect()[0] && x + size < game.paddle.getRect()[1]))) {
 			dy = -1;
-			game.paddle.shrink();
+			speed++;
+//			game.paddle.shrink();
 		}
 		else if(y + dy + size > game.getHeight()) {
 			game.gameOver();
 		}
 		
-		x += dx;
-		y += dy;
+		x += (dx * speed);
+		y += (dy * speed);
+//		x += dx;
+//		y += dy;
 	}
 	
 	public void paint(Graphics2D g) {
