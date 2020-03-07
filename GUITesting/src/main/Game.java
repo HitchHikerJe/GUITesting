@@ -73,15 +73,15 @@ public class Game extends JPanel{
 		//initializing of components
 		JFrame frame = new JFrame("Many Sprites");
 		Game game = new Game();
-		
+
 		//setting the window size and combining the components
 		//trust me... it may look gross, but it works rather well
 		game.setPreferredSize(new Dimension(Constants.gameWidth,Constants.gameHeight));
 		frame.getContentPane().add(game);
 		frame.pack();
 		
-		//makes the game visible, will end the program when the window is closed, and the window can easily be moved
 		frame.setVisible(true);
+		//will end the program when the window is closed and the window can easily be moved
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		

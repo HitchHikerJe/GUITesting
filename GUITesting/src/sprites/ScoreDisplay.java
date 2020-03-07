@@ -15,6 +15,7 @@ public class ScoreDisplay extends JPanel {
 	//necessary JPanel paint method called by Game class
 	public void paint(Graphics2D g) {
 		g.setColor(Color.WHITE);
-		g.drawString("Score: " + score, 0, 10);
+//		g.setFont(new Font("TimesRoman", Font.BOLD, 15));
+		g.drawString("Score: " + score, 2, 12);
 	}
 }
