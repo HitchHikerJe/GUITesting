@@ -13,8 +13,17 @@ public class Game extends JPanel{
 	public Paddle paddle;
 	public ScoreDisplay score;
 	
+	String pic;
+	
 	public Game() {
 		setBackground(Color.DARK_GRAY);
+		
+		if(pic == null) {
+			pic = "C:/Users/jjell/Downloads/Pixil Stuff/Right-Link.png";
+		}
+		JLabel l = new JLabel();
+		l.setIcon(new ImageIcon(pic));
+		this.add(l);
 		
 		//sprite initialization
 		ball = new Ball(this);
