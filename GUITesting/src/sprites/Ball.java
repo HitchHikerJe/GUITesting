@@ -13,6 +13,7 @@ public class Ball extends JPanel{
 	
 	//sprite stats with default values assigned
 	private int x = 0, y = 0, dy = 1, dx = 1, speed = 1, hitCount = 1;
+	private int pulses = 0;
 	
 	public Ball(Game g) {
 		game = g;
@@ -39,6 +40,7 @@ public class Ball extends JPanel{
 		else if(y + dy + Constants.ballSize > game.paddle.getRect()[2] && ((x < game.paddle.getRect()[1] && x > game.paddle.getRect()[0]) || (x + Constants.ballSize > game.paddle.getRect()[0] && x + Constants.ballSize < game.paddle.getRect()[1]))) {
 			dy = -1;
 			hitCount++;
+			speed *= -1;
 			game.score.scoreUp();
 			//see paddle class for discussion of this method's use
 //			game.paddle.shrink();
@@ -49,15 +51,21 @@ public class Ball extends JPanel{
 			game.gameOver();
 		}
 		
-		//checks paddle hits to see if speed increases
-		if(hitCount % (Constants.hitsToSpeedUp + 1) == 0) {
+		pulses++;
+		if(pulses%11 == 0) {
 			speed++;
-			hitCount = 1;
+			pulses = 1;
 		}
+		//checks paddle hits to see if speed increases
+//		if(hitCount % (Constants.hitsToSpeedUp + 1) == 0) {
+//			speed++;
+//			hitCount = 1;
+//		}
 		
 		//actually changing the position based on the excessive logic above
-		x += (dx * speed);
-		y += (dy * speed);
+//		x += (dx * speed);
+		x += dx;
+		y += speed;
 	}
 	
 	//necessary JPanel paint method called by Game class
